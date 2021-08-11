@@ -5,13 +5,8 @@ const router = express.Router();
 const mongoose = require('mongoose');
 
 
-router.get('/', async (req, res) => {
-    // localhost:3000/api/v1/products?categories=2342342,23423
-    //Getting specific data by using select method and excluding id
-    // const productList = await Product.find().select('name image -_id');
-
-    // Example http routes to get category wise through query params localhost:3000/api/v1/products?categories=11111/22222
-
+router.get(`/`, async (req, res) =>{
+    // localhost:3000/api/v1/products?categories=2342342,234234
     let filter = {};
     if(req.query.categories)
     {
@@ -26,8 +21,7 @@ router.get('/', async (req, res) => {
     res.send(productList);
 })
 
-router.get('/:id', async (req, res) => {
-    // using Populate method to specific id's were inter linked with tables
+router.get(`/:id`, async (req, res) =>{
     const product = await Product.findById(req.params.id).populate('category');
 
     if(!product) {
@@ -105,9 +99,7 @@ router.delete('/:id', (req, res)=>{
     })
 })
 
-// Created route for getiing counts of products
-router.get('/get/count', async (req, res) => {
-
+router.get(`/get/count`, async (req, res) =>{
     const productCount = await Product.countDocuments((count) => count)
 
     if(!productCount) {

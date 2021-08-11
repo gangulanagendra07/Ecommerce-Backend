@@ -1,0 +1,19 @@
+{
+    "orderItems": [
+        {
+            "quantity": 3,
+            "product": "610e301a1b10b9454c3acc24"
+        },
+        {
+            "quantity": 3,
+            "product": "610e2c51356a3358d48ceae2"
+        }
+    ],
+    "shippingAddress1": "abc",
+    "shippingAddress2": "1b",
+    "city":"hyderabad",
+    "zip": "00000",
+    "country": "india",
+    "phone": "111111111",
+    "user": "6111d953f208083f0404c984"
+}
